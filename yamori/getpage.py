@@ -17,4 +17,5 @@ class GetPage:
         返回基础页面信息
         '''
         html_page = requests.get(self.urlpath)
-        return html_page
+
+        return html_page.text

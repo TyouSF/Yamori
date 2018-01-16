@@ -11,7 +11,9 @@ args = parser.parse_args()
 
 url = args.url
 
-base_url = "https://huaban.com"
+# 原图片地址链接
+# 结构示例：[]域名](http://img.hb.aicdn.com/)+[图片key](128f1bf81808b8c6fadc1f442a0a9daa7f6d6bb21610f-3LFP5R)
+img_base_url = "http://img.hb.aicdn.com/"
 
 
 page = GetPage(url)
