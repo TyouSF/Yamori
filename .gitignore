@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# 本项目需忽略文件夹
+.huabanimgs/

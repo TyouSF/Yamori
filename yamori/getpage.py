@@ -12,10 +12,12 @@ class GetPage:
         '''
         self.urlpath = urlpath
 
-    def getpage(self):
+    def page_text(self):
         '''
         返回基础页面信息
         '''
+
+        print("<- 抓取网页源码...... ->")
         html_page = requests.get(self.urlpath)
 
         return html_page.text
