@@ -42,17 +42,16 @@ class SaveImg:
         self.imginfos = imginfos
         self.img_folder = img_folder
 
-    def save_img(self):
+    def save_img(self, total_num=0):
         '''
         保存图片到对应的目录下
         '''
-        n = 0
         for img in self.imginfos:
             img_name = os.path.join(
                 self.img_folder, '{}.jpg'.format(img['id']))
             if not os.path.exists(img_name):
-                n += 1
-                print("<- 正在抓取第 {} 张图片...... ->".format(n))
+                total_num += 1
+                print("<- 正在抓取第 {} 张图片...... ->".format(total_num))
                 r = requests.get(img['url'])
                 print("<- 开始保存图片...... ->")
                 with open(img_name, 'wb') as f:
@@ -60,6 +59,6 @@ class SaveImg:
                     print("<- 保存成功...... ->")
             else:
                 print("<- 当天图片已存在，执行跳过...... ->")
-        print("<- 执行完毕，成功保存 {} 张图片...... ->".format(n))
+        print("<- 执行完毕，成功保存 {} 张图片...... ->".format(total_num))
 
-        return True
+        return total_num
