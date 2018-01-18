@@ -32,11 +32,13 @@ def run(url, total_num=0):
 if __name__ == '__main__':
     total_num = run(url, total_num=0)
     while True:
-        print("""当前页图片已全部抓取，请确认是否包含您所需图片。
+        print("""
+        当前页图片已全部抓取，请确认是否包含您所需图片。
         如果包含，且不再抓取，请输入英文字母：n，结束程序;
-        如果没有，且需再抓取，请输入英文字母：y，继续抓取。""")
-        to_next = input("[y/n]：")
-        if to_next == 'n':
+        如果没有，且需再抓取，请输入英文字母：y，继续抓取。
+        """)
+        to_next = input("[y/n]:>>>")
+        if 'n' in to_next:
             print("程序已终止")
             break
         else:
